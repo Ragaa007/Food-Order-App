@@ -1,0 +1,13 @@
+.tags {
+    display: flex;
+    justify-content: center;
+    margin: 20px 10px;
+}
+.tag{
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: #af0313;
+    margin: 5px;
+    color: #fff;
+    text-decoration: none;
+}

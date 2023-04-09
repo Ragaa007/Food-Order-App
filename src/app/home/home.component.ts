@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FoodService } from '../services/food/food.service';
 import { Foods } from '../shared/models/food';
 import { StarRatingComponent } from 'ng-starrating';
+import { ActivatedRoute } from '@angular/router';
+import { Tag } from '../shared/models/tag';
 
 @Component({
   selector: 'app-home',
@@ -13,12 +15,29 @@ export class HomeComponent {
       red : any = '#f00';
       black : any = '#000';
       foods:Foods[]=[];
-      constructor(private fs:FoodService){
+      tags: Tag[] = [];
+      constructor(private fs:FoodService, private route:ActivatedRoute){
 
       }
 
       ngOnInit():void{
-        this.foods = this.fs.getAllFood();
+
+        this.route.params.subscribe(params=>{
+          if(params['searchItem']){
+            this.foods = this.fs.getAllFood().filter(food => food.name.toLocaleLowerCase().includes(params['searchItem'].toLocaleLowerCase()))
+            //this.foods = this.fs.getAllFood().filter(food => food.name.toLocaleLowerCase().includes(params['searchItem'].toLocaleLowerCase()))
+          }
+          else if(params['tag']){
+            this.foods= this.fs.getAllFoodTag(params['tag']);
+          }
+          else {
+            this.foods = this.fs.getAllFood();
+          }
+        })
+
+        //this.tags = this.fs.getAllTag();
+       // console.log("hello", this.tags)
+        
       }
 
       onRate($event:{oldValue:number, newValue:number, starRating:StarRatingComponent}) {

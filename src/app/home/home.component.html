@@ -1,22 +1,28 @@
+<app-search></app-search>
+<app-tags></app-tags>
+
+<div class="tags" *ngIf="tags">
+    <a *ngFor="let tag of tags" routerLink="/tag/{{tag.name}}">{{tag.name}}</a>
+</div>
 <ul>
     <li *ngFor = "let food of foods" >
         <a href="" >
             <img src="{{food.imageUrl}}" alt="Food Item" />
             <div class="content">
                 <div class="foodName">{{food.name}}</div>
-                <span class="{{food.favourite? '' : 'not'}}">♥</span>
+                <span class="favourite {{food.favourite? '' : 'not'}}" >♥</span>
             </div>
 
             <star-rating [value]="food.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" 
             size="24px" [readonly]="true" (rate)="onRate($event)"></star-rating>
-            
-            <div class="item-footer">
+             <div style="display:flex;"> 
                 <span class="origin" *ngFor="let origin of food.origins">
-                    {{origin}}
+                    <b>{{origin}}</b>
                 </span>
-                
+            </div>
+            <div class="item-footer">
                 <div class="cook-time">🕐 {{food.cookTime}}</div>
-                <div class="">{{food.price|currency}}</div>
+                <div class="food-price">{{food.price|currency}}</div>
             </div>
         </a>
     </li>
