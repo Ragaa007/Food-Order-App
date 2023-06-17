@@ -20,7 +20,8 @@ export class FoodService {
           origins: ['italy'],
           stars: 4.5,
           imageUrl: '/assets/food1.jpg',
-          tags: ['FastFood','Pizza','Lunch']
+          tags: ['FastFood','Pizza','Lunch'],
+          quantity: 1
         },
         {
           id: 2,
@@ -31,7 +32,8 @@ export class FoodService {
           origins: ['Persia', 'China', 'Middle East'],
           stars: 4.7,
           imageUrl: '/assets/food2.jpg',
-          tags: ['SlowtFood','Lunch']
+          tags: ['SlowtFood','Lunch'],
+          quantity: 1
         },
         {
           id: 3,
@@ -42,7 +44,8 @@ export class FoodService {
           origins: ['US', 'Germany'],
           stars: 3.5,
           imageUrl: '/assets/food3.jpg',
-          tags: ['FastFood','Hamburger']
+          tags: ['FastFood','Hamburger'],
+          quantity: 1
         },
         {
           id: 4,
@@ -53,7 +56,8 @@ export class FoodService {
           origins: ['Belgium', 'France'],
           stars: 4,
           imageUrl: '/assets/food4.jpg',
-          tags: ['FastFood','Fry']
+          tags: ['FastFood','Fry'],
+          quantity: 1
         },
         {
           id: 5,
@@ -64,7 +68,8 @@ export class FoodService {
           origins: ['India', 'Asia'],
           stars: 4.5,
           imageUrl: '/assets/food5.jpg',
-          tags: ['SlowFood','Soup','Lunch']
+          tags: ['SlowFood','Soup','Lunch'],
+          quantity: 1
         },
         {
           id: 6,
@@ -75,7 +80,8 @@ export class FoodService {
           origins: ['italy'],
           stars: 4.2,
           imageUrl: '/assets/food6.jpg',
-          tags: ['FastFood','Pizza','Lunch']
+          tags: ['FastFood','Pizza','Lunch'],
+          quantity: 1
         },
         {
           id: 7,
@@ -86,7 +92,8 @@ export class FoodService {
           origins: ['india'],
           stars: 4.5,
           imageUrl: '/assets/food7.jpg',
-          tags: ['FastFood','Pizza','Lunch']
+          tags: ['FastFood','Pizza','Lunch'],
+          quantity: 1
         },
         {
           id: 8,
@@ -97,7 +104,8 @@ export class FoodService {
           origins: ['Italy', 'UK'],
           stars: 3.7,
           imageUrl: '/assets/food8.jpg',
-          tags: ['FastFood','Burger']
+          tags: ['FastFood','Burger'],
+          quantity: 1
         }
     ];
   }
